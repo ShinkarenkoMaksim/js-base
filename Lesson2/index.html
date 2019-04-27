@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='operators.js'></script>
+	<script src='x.js'></script>
+	<script src='compare.js'></script>
+	<script src="func.js"></script>
+	<script src="exp.js"></script>
+</head>
+
+<body>
+	<p>
+		Только выражения (null >= 0) и (null <= 0) возращают true из-за особенностей реализации проверки >= и <= в javascript: <br>по спецификациям ECMA проверка (null > 0), (null < 0) или (null == 0) вернет false.  <br>А проверка [>=] и [<=] сводится к тому, что <br>т.к. (null < 0) = false, то (null >= 0) = true, <br>и т.к. (null > 0) = false, то (null <= 0) = true
+		<br>Мне кажется, что это продиктовано оптимизацией языка - вместо двух проверок [>] и [=], выполняется одна проверка. Но понять это можно только ознакомившись со спецификациями языка js.
+	</p>
+</body>
+
+</html>
