@@ -9,7 +9,7 @@ function power(val, pow) {
 
 function cyclePromptVal() {
 	var a = prompt('Введите число, которое хотите возвести в степень')
-	if (a == '') {
+	if (a == '' || a == null) {
 		alert('Необходимо ввести значение')
 		cyclePromptVal()
 	} else if (isNaN(a)) {
@@ -21,7 +21,7 @@ function cyclePromptVal() {
 
 function cyclePromptPow() {
 	var b = prompt('Введите степень, в которую хотите возвести число (допустимы только целые значения)')
-	if (b == '') {
+	if (b == '' || b == null) {
 		alert('Необходимо ввести значение')
 		cyclePromptPow()
 	} else if (b % 1 != 0) {
