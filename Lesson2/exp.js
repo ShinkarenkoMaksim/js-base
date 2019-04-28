@@ -7,33 +7,35 @@ function power(val, pow) {
 	return (pow > 0) ? val * power(val, (pow - 1)) : 1 / (val * power(val, (Math.abs(pow) - 1)));
 }
 
+var val, pow;
+
 function cyclePromptVal() {
-	var a = prompt('Введите число, которое хотите возвести в степень')
-	if (a == '' || a == null) {
-		alert('Необходимо ввести значение')
-		cyclePromptVal()
-	} else if (isNaN(a)) {
-		alert('Допускается вводить только числа')
-		cyclePromptVal()
+	val = prompt('Введите число, которое хотите возвести в степень');
+	if (val == '' || val == null) {
+		alert('Необходимо ввести значение');
+		cyclePromptVal();
+	} else if (isNaN(val)) {
+		alert('Допускается вводить только числа');
+		cyclePromptVal();
 	}
-	return a;
+	return val;
 }
 
 function cyclePromptPow() {
-	var b = prompt('Введите степень, в которую хотите возвести число (допустимы только целые значения)')
-	if (b == '' || b == null) {
-		alert('Необходимо ввести значение')
-		cyclePromptPow()
-	} else if (b % 1 != 0) {
-		alert('Допускается вводить только целые числа')
-		cyclePromptPow()
-	} else if (isNaN(b)) {
-		alert('Допускается вводить только числа')
-		cyclePromptPow()
+	pow = prompt('Введите степень, в которую хотите возвести число (допустимы только целые значения)');
+	if (pow == '' || pow == null) {
+		alert('Необходимо ввести значение');
+		cyclePromptPow();
+	} else if (pow % 1 != 0) {
+		alert('Допускается вводить только целые числа');
+		cyclePromptPow();
+	} else if (isNaN(pow)) {
+		alert('Допускается вводить только числа');
+		cyclePromptPow();
 	}
-	return b;
+	return pow;
 }
 
-alert(power(cyclePromptVal(), cyclePromptPow()))
+alert(power(cyclePromptVal(), cyclePromptPow()));
 
 //Поиск значения числа в дробной или иррациональной (молчу о комплексных числах) степени не реализован, т.к. я не уверен, что это возможно реализовать на уровне моих знаний за несколько вечеров)))
