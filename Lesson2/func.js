@@ -13,13 +13,13 @@ function division(a, b) {
 
 function mathOperation(arg1, arg2, operation) {
 	switch (operation) {
-		case ('sum') :
-			return(arg1 + arg2);
-		case ('subtract'):
-			return(arg1 - arg2);
-		case ('multipl'):
-			return(arg1 * arg2);
-		case ('division'):
-			return(arg1 / arg2);
+		case ('+') :
+			return(sum(arg1, arg2));
+		case ('-'):
+			return(subtract(arg1, arg2));
+		case ('*'):
+			return(multipl(arg1, arg2));
+		case ('/'):
+			return(division(arg1, arg2));
 	}
 }

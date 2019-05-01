@@ -4,7 +4,11 @@ function power(val, pow) {
 	} else if (pow == 1) {
 		return val;
 	}
-	return (pow > 0) ? val * power(val, (pow - 1)) : 1 / (val * power(val, (Math.abs(pow) - 1)));
+	if (pow > 0) {
+		return val * power(val, (pow - 1));
+	} else {
+		return 1 / (val * power(val, (Math.abs(pow) - 1)));
+	}
 }
 
 var val, pow;
