@@ -10,10 +10,13 @@ function objToNum() {
 	} else if (num < 0) {
 		console.log('Введено число, меньше 0');
 		return;
+	} else if (num == null) {
+		console.log('Не было ничего введено');
+		return;
 	} else if (num.length > 3) {
 		console.log('Введено число, больше 999');
 		return;
-	} else if (num == null) {
+	} else if (num.length == 0 || num == null) {
 		console.log('Не было ничего введено');
 		return;
 	}
