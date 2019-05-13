@@ -1,35 +1,31 @@
-function objToNum() {
-	var num = prompt('Введите целое число, от 0 до 999');
+function numToObj(num) {
 	var objNum = {};
 	if (isNaN(num)) {
 		console.log('Введено не число')
-		return;
+		return {};
 	} else if (num % 1 != 0) {
 		console.log('Введено нецелое число');
-		return;
+		return {};
 	} else if (num < 0) {
 		console.log('Введено число, меньше 0');
-		return;
+		return {};
 	} else if (num == null || num.length == 0) {
 		console.log('Ничего не введено');
-		return;
+		return {};
 	} else if (num.length > 3) {
 		console.log('Введено число, больше 999');
-		return;
+		return {};
 	}
-	if (num.length == 3) {
-		objNum.hundreds = num[0];
-		num = num[1] + num[2];
+	
+	var numString = num + '';
+	var keys = ['units', 'dozen', 'hundreds',];
+	
+	for (var i = numString.length - 1; i >= 0; i--) {
+		var key = keys[numString.length - 1 - i];
+		objNum[key] = numString[i];
 	}
-	if (num.length == 2) {
-		objNum.tens = num[0];
-		num = num[1];
-	}
-	if (num.length == 1) {
-		objNum.units = num[0];
-	}
-	console.log(objNum);
 	return objNum;
 }
+var num = prompt('Введите целое число, от 0 до 999');
 
-objToNum();
+console.log(numToObj(num));
