@@ -1,5 +1,5 @@
 .container {
-	font-size: .75rem;
+	font-size: 1.5rem;
 	margin-bottom: 5rem;
 }
 
@@ -10,10 +10,10 @@
 .cell {
 	border: 1px solid #000;
 	box-sizing: border-box;
-	width: 2rem;
-	height: 2rem;
+	width: 4rem;
+	height: 4rem;
 	text-align: center;
-	line-height: 2rem;
+	line-height: 4rem;
 	
 	&-dark {
 		background-color: black;
